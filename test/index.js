@@ -31,10 +31,11 @@ describe('Parse input text:', function () {
 describe('Generate tags', function () {
     it('', function (done) {
       var result = app.generateTagCloud(inputText, keyWords);
-      expect(result).to.have.string('<tagcloudtag class="bigish new">bigishNew<tagcloudtag>');
+      expect(result).to.have.string('<tagcloudtag class="bigish new">bigishNew</tagcloudtag>');
       done();
     });
 });
 
 
  exports.lab = lab;
+
