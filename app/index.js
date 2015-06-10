@@ -2,7 +2,7 @@
 var parseInputText = function (text, keyWords) {
   var result = {};
   text = text.replace(/\s+/g, ' ');
-  var re = new RegExp(' (' + keyWords.join('|') + ') ', 'g');
+  var re = new RegExp(' (' + keyWords.join('|') + ') ', 'gi');
   var wordList = text.match(re);
   var weight = 1 / wordList.length;
 
