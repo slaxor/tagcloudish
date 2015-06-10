@@ -53,9 +53,11 @@ var generateTagCloud = function (text, keyWords) {
   var result = '';
   var parsedText = parseInputText(text, keyWords);
   Object.keys(parsedText).forEach(function (key) {
-    result += '<tagcloudtag class="' +
+    result += '<slaxor-tagcloud-tag class="' +
       calculateWeightAndAgeClasses(parsedText[key]) +
-          '">' + key + '</tagcloudtag>\n';
+      '" data-weight="' + parsedText[key].weight +
+      '" data-age="' + parsedText[key].age + '">' +
+      key + '</slaxor-tagcloud-tag>\n';
   });
   return result;
 };
