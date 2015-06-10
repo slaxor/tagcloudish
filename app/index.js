@@ -19,9 +19,7 @@ var parseInputText = function (text, keyWords) {
 };
 
 var calculateWeightAndAgeClasses = function (weightAndAge) {
-  // 100-30%, 30-15%, 15-5%, 5-0%
-  //var ages = ['old', 'oldish', 'newish', 'new'];
-  //var weights = ['small', 'smalish', 'bigish', 'big'];
+
   var ages = ['new', 'newish', 'oldish', 'old'];
   var weights = ['big', 'bigish', 'smallish', 'small'];
   var htmlClass;
