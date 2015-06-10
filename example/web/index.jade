@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='description' content='testing the tagcloud as custom element')
+    title tagcloudish example
+    script(type="text/javascript" async="async" src="javascripts/application.js")
+    link(rel='stylesheet', href='/stylesheets/application.css')
+  body
+    slaxor-component-tagcloud
+      each keyWord in keyWords
+        slaxor-tagcloud-keyword= keyWord
+      slaxor-tagcloud-text= text
+
+

@@ -1,0 +1,71 @@
+@base-color: #19285b;
+@text-color: white;
+.border-radius (@radius: 5px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+}
+
+.transform (@rotate: 90deg, @scale: 1, @skew: 1deg, @translate: 10px) {
+    -webkit-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+    -moz-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+    -o-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+    -ms-transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+    transform: rotate(@rotate) scale(@scale) skew(@skew) translate(@translate);
+}
+
+body {
+  background-color: darkgrey;
+}
+
+section {
+  display: block;
+}
+
+slaxor-component-tagcloud {
+  display: block;
+  background-color: @base-color;
+  width: 45em;
+  min-height: 23em;
+  padding: 15px;
+  .border-radius(8px);
+}
+
+slaxor-tagcloud-tag {
+  text-color: @text-color;
+  margin: 1em;
+
+  &.big {
+    font-size: 160%;
+    .transform(45deg, 1, 1deg, 0px);
+  }
+
+  &.bigish {
+    font-size: 100%;
+  }
+
+  &.smallish {
+    font-size: 80%;
+  }
+
+  &.small {
+    font-size: 50%;
+  }
+
+  &.new {
+    color: @text-color;
+  }
+
+  &.newish {
+    color: fadeout(@text-color, 30%);
+  }
+
+  &.oldish {
+    color: fadeout(@text-color, 50%);
+  }
+
+  &.old {
+    color: fadeout(@text-color, 70%);
+  }
+}
+

@@ -1,0 +1,16 @@
+{
+  "ecmaFeatures": {
+    "global-strict": true,
+    "blockBindings": true,
+    "forOf": true,
+    "jsx": true
+  },
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "semi": 2,
+    "quotes": [2, "single"]
+  }
+}
+

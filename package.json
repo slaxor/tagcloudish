@@ -5,6 +5,7 @@
   "main": "app/index.js",
   "scripts": {
     "test": "./node_modules/.bin/lab -v --coverage --lint --parallel"
+    "example": "./node_modules/.bin/nodemon --watch ./app --watch ./example ./example/app"
   },
   "repository": {
     "type": "git",
@@ -22,7 +23,16 @@
     "url": "https://github.com/slaxor/tagcloudish/issues"
   },
   "homepage": "https://github.com/slaxor/tagcloudish",
-  "dependencies": {},
+  "dependencies": {
+    "body-parser": "~1.12.4",
+    "browserify": "^10.2.4",
+    "browserify-middleware": "^5.0.2",
+    "express": "~4.12.4",
+    "less": "^2.5.1",
+    "less-middleware": "^1.0.4",
+    "lodash": "^3.9.3",
+    "morgan": "~1.5.3"
+  },
   "devDependencies": {
     "chai": "^3.0.0",
     "lab": "^5.9.0",
