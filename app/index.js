@@ -50,14 +50,13 @@ var calculateWeightAndAgeClasses = function (weightAndAge) {
 };
 
 var generateTagCloud = function (text, keyWords) {
-  var result = '<tagcloud>\n';
+  var result = '';
   var parsedText = parseInputText(text, keyWords);
   Object.keys(parsedText).forEach(function (key) {
     result += '<tagcloudtag class="' +
       calculateWeightAndAgeClasses(parsedText[key]) +
           '">' + key + '</tagcloudtag>\n';
   });
-  result += '</tagcloud>\n';
   return result;
 };
 
