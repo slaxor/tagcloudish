@@ -15,23 +15,26 @@ var inputText = fs.readFileSync('./test/fixtures/sample_text.txt').toString();
 describe('Parse input text:', function () {
     it('counts words in a given text', function (done) {
       var result = app.parseInputText(inputText, keyWords);
-      expect(result.bigishNew.weight).to.equal(0.24444444444444446);
-      expect(result.bigOldish.weight).to.equal(0.5777777777777776);
+      expect(result.smallOld.weight).to.equal(0.03448275862068964);
+      expect(result.smallishNewish.weight).to.equal(0.10344827586206894);
+      expect(result.bigishNew.weight).to.equal(0.1724137931034482);
+      expect(result.bigOldish.weight).to.equal(1);
       done();
     });
 
     it('calculates the age of the earliest appearance', function (done) {
       var result = app.parseInputText(inputText, keyWords);
-      expect(result.bigishNew.age).to.equal(0);
-      expect(result.bigOldish.age).to.equal(0.4);
+      expect(result.smallishNew.age).to.equal(0);
+      expect(result.bigishNew.age).to.equal(0.04878048780487805);
+      expect(result.bigOldish.age).to.equal(0.2682926829268293);
       done();
     });
 });
 
 describe('Generate tags', function () {
-    it('', function (done) {
+    it('should have a <slaxor-tagcloud-tag>', function (done) {
       var result = app.generateTagCloud(inputText, keyWords);
-      expect(result).to.have.string('<tagcloudtag class="bigish new">bigishNew</tagcloudtag>');
+      expect(result).to.match(/<slaxor-tagcloud-tag.*>smallOldish<\/slaxor-tagcloud-tag>/);
       done();
     });
 });

@@ -4,7 +4,7 @@
   "description": "Tagcloud generator",
   "main": "app/index.js",
   "scripts": {
-    "test": "./node_modules/.bin/lab -v --coverage --lint --parallel"
+    "test": "./node_modules/.bin/lab -v --coverage --lint --parallel",
     "example": "./node_modules/.bin/nodemon --watch ./app --watch ./example ./example/app"
   },
   "repository": {
