@@ -1,10 +1,13 @@
 'use strict';
+var _ = require('lodash');
+
 var parseInputText = function (text, keyWords) {
   var result = {};
   text = text.replace(/\s+/g, ' ');
   var re = new RegExp(' (' + keyWords.join('|') + ') ', 'gi');
   var wordList = text.match(re);
   var weight = 1 / wordList.length;
+  var maxWeight;
 
   wordList.forEach(function (word, index) {
     word = word.replace(/\s/g, '');
@@ -13,6 +16,14 @@ var parseInputText = function (text, keyWords) {
     } else {
       result[word].weight += weight;
     }
+  });
+
+  // this normalises the weight so the the max value is always 1
+  maxWeight = Math.max.apply(null, _.map(result, function (val) {
+    return val.weight;
+  }));
+  Object.keys(result).forEach(function (key) {
+    result[key].weight *= 1 / maxWeight;
   });
 
   return result;
