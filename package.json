@@ -28,6 +28,7 @@
     "body-parser": "~1.12.4",
     "browserify": "^10.2.4",
     "browserify-middleware": "^5.0.2",
+    "document-register-element": "^0.4.3",
     "express": "~4.12.4",
     "jade": "^1.11.0",
     "less": "^2.5.1",

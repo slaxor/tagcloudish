@@ -1,6 +1,8 @@
 'use strict';
 var app = require('../../../app/index');
+
 var proto = Object.create(HTMLElement.prototype);
+require('document-register-element');
 
 proto.createdCallback = function() {
   this.rendered = false;
