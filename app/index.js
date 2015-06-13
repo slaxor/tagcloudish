@@ -68,6 +68,7 @@ var generateTagCloud = function (text, keyWords) {
       '" data-age="' + parsedText[key].age + '">' +
       key + '</slaxor-tagcloud-tag>\n';
   });
+  result += '<div class="credit">created with <a href="https://github.com/slaxor/tagcloudish">tagcloudish<a/></div>';
   return result;
 };
 
