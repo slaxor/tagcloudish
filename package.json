@@ -5,7 +5,7 @@
   "main": "app/index.js",
   "scripts": {
     "test": "./node_modules/.bin/lab -v --coverage --lint --parallel",
-    "example": "./node_modules/.bin/nodemon --watch ./app --watch ./example ./example/app"
+    "example": "./node_modules/.bin/nodemon --debug --watch ./app --watch ./example ./example/app"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/slaxor/tagcloudish",
   "dependencies": {
+    "async": "^1.2.1",
     "body-parser": "~1.12.4",
     "browserify": "^10.2.4",
     "browserify-middleware": "^5.0.2",

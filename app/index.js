@@ -6,13 +6,13 @@ var parseInputText = function (text, keyWords) {
   text = text.replace(/\s+/g, ' ');
   var re = new RegExp(' (' + keyWords.join('|') + ') ', 'gi');
   var wordList = text.match(re);
-  var weight = 1 / wordList.length;
+  var weight = 1 / text.length;
   var maxWeight;
 
-  wordList.forEach(function (word, index) {
+  wordList.forEach(function (word) {
     word = word.replace(/\s/g, '');
     if (typeof result[word] === 'undefined') {
-      result[word] = {weight: weight, age: weight * index};
+      result[word] = {weight: weight, age: text.indexOf(word) * weight};
     } else {
       result[word].weight += weight;
     }
@@ -35,7 +35,7 @@ var calculateWeightAndAgeClasses = function (weightAndAge) {
   var weights = ['big', 'bigish', 'smallish', 'small'];
   var htmlClass;
 
-  if (weightAndAge.weight > 0.30) {
+  if (weightAndAge.weight > 0.40) {
     htmlClass = weights[0] + ' ';
   } else if (weightAndAge.weight > 0.15) {
     htmlClass = weights[1] + ' ';
@@ -61,7 +61,7 @@ var calculateWeightAndAgeClasses = function (weightAndAge) {
 var generateTagCloud = function (text, keyWords) {
   var result = '';
   var parsedText = parseInputText(text, keyWords);
-  Object.keys(parsedText).forEach(function (key) {
+  _.shuffle(Object.keys(parsedText)).forEach(function (key) {
     result += '<slaxor-tagcloud-tag class="' +
       calculateWeightAndAgeClasses(parsedText[key]) +
       '" data-weight="' + parsedText[key].weight +

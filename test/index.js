@@ -15,9 +15,9 @@ var inputText = fs.readFileSync('./test/fixtures/sample_text.txt').toString();
 describe('Parse input text:', function () {
     it('counts words in a given text', function (done) {
       var result = app.parseInputText(inputText, keyWords);
-      expect(result.smallOld.weight).to.equal(0.03448275862068964);
-      expect(result.smallishNewish.weight).to.equal(0.10344827586206894);
-      expect(result.bigishNew.weight).to.equal(0.1724137931034482);
+      expect(result.smallOld.weight).to.equal(0.03448275862068965);
+      expect(result.smallishNewish.weight).to.equal(0.10344827586206896);
+      expect(result.bigishNew.weight).to.equal(0.17241379310344826);
       expect(result.bigOldish.weight).to.equal(1);
       done();
     });
@@ -25,8 +25,8 @@ describe('Parse input text:', function () {
     it('calculates the age of the earliest appearance', function (done) {
       var result = app.parseInputText(inputText, keyWords);
       expect(result.smallishNew.age).to.equal(0);
-      expect(result.bigishNew.age).to.equal(0.04878048780487805);
-      expect(result.bigOldish.age).to.equal(0.2682926829268293);
+      expect(result.bigishNew.age).to.equal(0.06864988558352403);
+      expect(result.bigOldish.age).to.equal(0.30205949656750575);
       done();
     });
 });
