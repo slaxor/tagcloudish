@@ -9,11 +9,13 @@ Tagclouish
 
   This is how you use it:
 
+      npm install -g nodemon
       git clone git@github.com:slaxor/tagcloudish.git
       cd tagcloudish
       npm install
       npm run-script example
-      xdg-open http://127.0.0.1:3000/Heinrich_Heine-Deutschland-Ein-Wintermaerchen
+
+  in chrome open http://127.0.0.1:3000/Heinrich_Heine-Deutschland-Ein-Wintermaerchen
 
 
 
